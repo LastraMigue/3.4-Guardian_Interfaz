@@ -1,7 +1,7 @@
 /**
  * Función auxiliar para leer una cookie por su nombre
- * @param {string} nombre - Nombre de la cookie a buscar
- * @returns {string|null} - Valor de la cookie decodificado o null si no existe
+-  * @param {string} nombreNombre de la cookie a buscar
+-  * @returns {string|null}Valor de la cookie decodificado o null si no existe
  */
 function getCookie(nombre) {
     const pares = document.cookie.split("; ");
@@ -53,11 +53,20 @@ if (temaGuardado) {
     }
 }
 
-// Requisitos de ejecución inmediata con eventos y funciones flecha
+/**
+ * Escucha el evento input en el selector de color para actualizar el fondo de forma inmediata.
+ * @param {string} "input" - Tipo de evento que detecta cambios en tiempo real.
+ * @param {Function} callback - Función flecha que asigna el valor del color al body.
+ */
 campoColor.addEventListener("input", () => {
     document.body.style.backgroundColor = campoColor.value;
 });
 
+/**
+ * Escucha el evento change en el selector de tema para alternar entre clases CSS.
+ * @param {string} "change" - Tipo de evento que detecta la selección de una opción.
+ * @param {Function} callback - Función flecha que añade o elimina la clase tema-oscuro en el body.
+ */
 selectTema.addEventListener("change", () => {
     if (selectTema.value === "oscuro") {
         document.body.classList.add("tema-oscuro");
@@ -66,7 +75,11 @@ selectTema.addEventListener("change", () => {
     }
 });
 
-// Almacenamiento en Cookies
+/**
+ * Gestiona el evento submit del formulario para almacenar las preferencias del usuario en cookies.
+ * @param {string} "submit" - Tipo de evento al enviar el formulario.
+ * @param {Function} callback - Función flecha que previene el comportamiento por defecto, calcula fechas y guarda cookies.
+ */
 formPreferencias.addEventListener("submit", (e) => {
     e.preventDefault();
 
@@ -88,7 +101,11 @@ formPreferencias.addEventListener("submit", (e) => {
     location.reload(); // 3. Recargar
 });
 
-// Restablecer Interfaz
+/**
+ * Gestiona el evento click en el botón de restablecer para borrar cookies y devolver la interfaz a su estado inicial.
+ * @param {string} "click" - Tipo de evento al hacer clic en el botón.
+ * @param {Function} callback - Función flecha que elimina las cookies, resetea estilos y limpia el DOM.
+ */
 btnRestablecer.addEventListener("click", () => {
     // 1. Eliminar cookies
     const fechaPasada = "Thu, 22 Feb 2002 00:00:00 UTC";
