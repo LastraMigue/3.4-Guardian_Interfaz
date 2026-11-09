@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personalizador Web Interactivo</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+
+    <!-- Contenedor dinámico -->
+    <div id="contenedor-bienvenida"></div>
+
+    <!-- Formulario -->
+    <form id="form-preferencias">
+        <div>
+            <label for="nombre-usuario">Nombre de Usuario:</label>
+            <input type="text" id="nombre-usuario" required>
+        </div>
+        <div>
+            <label for="color-fondo">Color de Fondo:</label>
+            <input type="color" id="color-fondo">
+        </div>
+        <div>
+            <label for="tema-visual">Tema Visual:</label>
+            <select id="tema-visual">
+                <option value="claro">Modo Claro</option>
+                <option value="oscuro">Modo Oscuro</option>
+            </select>
+        </div>
+        <button type="submit" id="btn-guardar">Guardar Preferencias</button>
+    </form>
+
+    <!-- Botón restablecer -->
+    <button id="btn-restablecer">Restablecer Interfaz</button>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
